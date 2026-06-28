@@ -1,3 +1,7 @@
+"""
+Prompt Templates: This module is a centralized storage for all LLM prompts used in the application.
+"""
+
 PLANNER_PROMPT = """You are a research planning assistant. Generate search queries for the following topic.
 
 Topic: {topic}

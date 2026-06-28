@@ -19,6 +19,7 @@ class ResearchState(TypedDict):
     output_format: str
     output_path: Optional[str]
 
+#Code for unit testing
 if __name__ == "__main__":
     state: ResearchState = {
         "topic": "The impact of AI on journalism",
