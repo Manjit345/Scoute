@@ -26,6 +26,7 @@ def searcher(state: ResearchState) -> dict:
     web_results = []
     academic_results = []
 
+    # Run both a general web search and a news/academic-focused search for every query the planner generated
     for query in queries:
         try:
             web_result = client.search(query=query, search_depth="basic")
@@ -34,6 +35,7 @@ def searcher(state: ResearchState) -> dict:
             print(f"Web search failed for '{query}': {e}") 
 
         try:
+            # Prefixing with "academic research:" nudges Tavily toward more authoritative, citation-worthy sources
             academic_result = client.search(query=f"academic research: {query}", search_depth="advanced")
             academic_results.append({"query": query, "results": academic_result})
             

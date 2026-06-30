@@ -32,6 +32,7 @@ def planner(state: ResearchState) -> dict:
             temperature=0.7
         )
         response = llm.invoke(prompt)
+        # Split the response into lines and strip numbering (e.g. "1. ", "2. ") so each query is a clean string with no leading digits or dots
         search_queries = [
             q.strip().lstrip("0123456789. ")
             for q in response.content.strip().split('\n')
