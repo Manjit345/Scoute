@@ -38,7 +38,7 @@ The graph also includes a conditional loop where, if a deep-dive research reques
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
 
 ## How to Run
-[Scoute](https://scoute-amujof2suntmkewhthj3jk.streamlit.app/)
+Use this link: [Scoute](https://scoute-amujof2suntmkewhthj3jk.streamlit.app/)
 
 To run locally:
 1. Clone the repository: `git clone https://github.com/Manjit345/Scoute.git`
