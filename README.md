@@ -10,11 +10,15 @@ You have to provide a topic you want to research about and select the depth you 
 - Key Findings
 - Conclusion
 - Sources Cited
-for a quick search and a longer report with extra sections:
+  
+  for a quick search and a longer report with extra sections:
+
 - Background
 - Key Findings (multiple subsections in this)
 - Analysis
-for a deep search.
+  
+  for a deep search.
+  
 And at last, the agent gives you the report along with an option to download the report as PDF, DOCX or Markdown.
 
 ## Agent Architecture
