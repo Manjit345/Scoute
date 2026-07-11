@@ -27,15 +27,18 @@ def planner(state: ResearchState) -> dict:
     )
     try:
         llm = ChatGoogleGenerativeAI(
-            model="gemini-2.5-flash",
+            model="gemini-3.5-flash",
             google_api_key=os.getenv("GEMINI_API_KEY"),
             temperature=0.7
         )
         response = llm.invoke(prompt)
+        content = response.content
+        if isinstance(content, list):
+            content = content[0].get('text', '') if isinstance(content[0], dict) else str(content[0])
         # Split the response into lines and strip numbering (e.g. "1. ", "2. ") so each query is a clean string with no leading digits or dots
         search_queries = [
             q.strip().lstrip("0123456789. ")
-            for q in response.content.strip().split('\n')
+            for q in content.strip().split('\n')
             if q.strip()
         ]
         return {

@@ -22,7 +22,7 @@ def synthesizer(state: ResearchState) -> dict:
     """
 
     llm = ChatGoogleGenerativeAI(
-        model = "gemini-2.5-flash",
+        model = "gemini-3.5-flash",
         google_api_key = os.getenv("GEMINI_API_KEY"),
         temperature = 0.5
     )
@@ -42,8 +42,11 @@ def synthesizer(state: ResearchState) -> dict:
     
     try:
         response = llm.invoke(prompt)
-        return{
-            "report": response.content
+        content = response.content
+        if isinstance(content, list):
+            content = content[0].get('text', '') if isinstance(content[0], dict) else str(content[0])
+        return {
+            "report": content
         }
     except Exception as e:
         print(f"Error in synthesizer: {e}")
