@@ -14,7 +14,6 @@ You have to provide a topic you want to research about and select the depth you 
   for a quick search and a longer report with extra sections:
 
 - Background
-- Key Findings (multiple subsections in this)
 - Analysis
   
   for a deep search.
